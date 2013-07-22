@@ -10,7 +10,12 @@ namespace MvcApplication1.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("page_home");
+        }
+
+        public ActionResult brasa()
+        {
+            return View("page_home");
         }
     }
 }
