@@ -3,17 +3,17 @@ var Contact = function () {
     return {
         
         //Map
-        initMap: function () {
+        initMap: function (latitud, longitud) {
 			var map;
 			$(document).ready(function(){
 			  map = new GMaps({
 				div: '#map',
-				lat: -13.004333,
-				lng: -38.494333
+				lat: latitud,
+				lng: longitud
 			  });
 			   var marker = map.addMarker({
-		            lat: -13.004333,
-					lng: -38.494333,
+		            lat: latitud,
+					lng: longitud,
 		            title: 'Loop, Inc.'
 		        });
 			});

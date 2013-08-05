@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="Unity/assets/plugins/flexslider/flexslider.css" type="text/css" media="screen">      
     <link rel="stylesheet" href="Unity/assets/plugins/revolution_slider/css/rs-style.css" media="screen">
     <link rel="stylesheet" href="Unity/assets/plugins/revolution_slider/rs-plugin/css/settings.css" media="screen">
-    <!--<link rel="stylesheet" href="Unity/assets/plugins/bxslider/jquery.bxslider.css">-->
+    <link rel="stylesheet" href="Unity/assets/plugins/bxslider/jquery.bxslider.css">
     <!-- CSS Theme -->    
     <link rel="stylesheet" href="Unity/assets/css/themes/default.css" id="style_color">
     <link rel="stylesheet" href="Unity/assets/css/themes/headers/header1-light.css" id="style_color-header-2">  
@@ -953,8 +953,9 @@ Tels: 01 (899) 223-3414 y 223-3415
 <script type="text/javascript" src="Unity/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
 <!-- JS Implementing Plugins -->           
 <script type="text/javascript" src="Unity/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-<script type="text/javascript" src="assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
+<script type="text/javascript" src="Unity/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="Unity/assets/plugins/bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="Unity/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
 <script type="text/javascript" src="Unity/assets/plugins/back-to-top.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="Unity/assets/js/app.js"></script>
@@ -963,7 +964,9 @@ Tels: 01 (899) 223-3414 y 223-3415
     jQuery(document).ready(function () {
         App.init();
         App.initSliders();
+
         Index.initRevolutionSlider(); 
+         App.initBxSlider1();
     });
 </script>
 <!--[if lt IE 9]>
