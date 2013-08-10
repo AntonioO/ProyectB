@@ -195,37 +195,45 @@
         <div id="w">    
             <div class="sort" id="sort">
 				<ul class="unstyled inline">
-                	<li><a href="#" class="all selected">All</a></li>
-                	<li><a href="#" class="web">Web</a></li>
-                	<li><a href="#" class="ios">iOS</a></li>
-                	<li><a href="#" class="print">Print</a></li>
+                	<li><a href="#" class="Chihuahua">Chihuahua</a></li>
+                	<li><a href="#" class="Reynosa">Reynosa</a></li>
+                	<li><a href="#" class="Juarez">Juarez</a></li>
                 </ul>
             </div>
             
+            <div class="sort" id="sort2">
+                <ul class="unstyled inline">
+                    <!--<li><a href="#" class="all selected">All</a></li>-->
+                    <li><a href="#" class="sendas">Las Sendas</a></li>
+                    <li><a href="#" class="delreal">Hacienda del Real</a></li>
+                    <li><a href="#" class="peninsula">Peninsula</a></li>
+                </ul>
+            </div>
+
             <ul class="portfolio recent-work clearfix"> 
-                <li data-id="id-1" class="ios">
-                    <a href="portfolio_item.html">
+                <li data-id="id-1" class="Chihuahua" >
+                    <a href="#" click="goLevel2()">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/2.jpg" alt="" /></em>
                         <span>
-                            <strong>Happy New Year</strong>
-                            <i>Anim pariatur cliche reprehenderit</i>
+                            <strong>Las Sendas</strong>
+                            <i>en chih</i>
                         </span>
                     </a>
                 </li>
-                <li data-id="id-2" class="print">
+                <li data-id="id-2" class="Chihuahua">
                     <a href="portfolio_item.html">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/3.jpg" alt="" /></em>
                         <span>
-                            <strong>Happy New Year</strong>
-                            <i>Anim pariatur cliche reprehenderit</i>
+                            <strong>Haciendas del Real</strong>
+                            <i>en Chih</i>
                         </span>
                     </a>
                 </li>
-                <li data-id="id-3" class="ios">
+                <li data-id="id-3" class="Chihuahua sendas">
                     <a href="portfolio_item.html">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/4.jpg" alt="" /></em>
                         <span>
-                            <strong>Happy New Year</strong>
+                            <strong>Catalunia</strong>
                             <i>Anim pariatur cliche reprehenderit</i>
                         </span>
                     </a>
@@ -266,7 +274,7 @@
                         </span>
                     </a>
                 </li>
-                <li data-id="id-8" class="web">
+               <li data-id="id-8" class="web">
                     <a href="portfolio_item.html">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/2.jpg" alt="" /></em>
                         <span>
@@ -437,7 +445,7 @@
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
 <!-- JS Implementing Plugins -->           
 <script type="text/javascript" src="assets/plugins/portfolioSorting/js/jquery.quicksand.js"></script>
-<script type="text/javascript" src="assets/plugins/portfolioSorting/js/sorting.js"></script>
+<script type="text/javascript" src="assets/plugins/portfolioSorting/js/sortingPortfolio.js"></script>
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
@@ -445,6 +453,9 @@
     jQuery(document).ready(function() {
         App.init();
     });
+    function goLevel2(){
+
+    }
 </script>
 <!--[if lt IE 9]>
     <script src="assets/js/respond.js"></script>
