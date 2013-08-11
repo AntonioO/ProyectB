@@ -126,6 +126,7 @@
 	z-index:999;
 	position:relative;
 	border-bottom:solid 2px #eee;
+	height: 100px;
 }
 
 .header .container {
