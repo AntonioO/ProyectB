@@ -193,7 +193,7 @@
 <div class="container"> 	
 	<div class="row-fluid"> 
         <div id="w">    
-            <div class="sort" id="sort">
+            <div class="sort sortUnhidden" id="sorterCiudades">
 				<ul class="unstyled inline">
                 	<li><a href="#" class="Chihuahua">Chihuahua</a></li>
                 	<li><a href="#" class="Reynosa">Reynosa</a></li>
@@ -201,7 +201,7 @@
                 </ul>
             </div>
             
-            <div class="sort" id="sort2">
+            <div class="sort sortHidden" id="sorterComunidades">
                 <ul class="unstyled inline">
                     <!--<li><a href="#" class="all selected">All</a></li>-->
                     <li><a href="#" class="sendas">Las Sendas</a></li>
@@ -210,9 +210,17 @@
                 </ul>
             </div>
 
+            <div class="sort sortHidden" id="sorterCerradas">
+                <ul class="unstyled inline">
+                    <!--<li><a href="#" class="all selected">All</a></li>-->
+                    <li><a href="#" class="cataluna">Cataluña</a></li>
+                    <li><a href="#" class="baleares">Baleares</a></li>
+                </ul>
+            </div>
+
             <ul class="portfolio recent-work clearfix"> 
                 <li data-id="id-1" class="Chihuahua" >
-                    <a href="#" click="goLevel2()">
+                    <a href="sendas" class="sorterComunidades">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/2.jpg" alt="" /></em>
                         <span>
                             <strong>Las Sendas</strong>
@@ -221,7 +229,7 @@
                     </a>
                 </li>
                 <li data-id="id-2" class="Chihuahua">
-                    <a href="portfolio_item.html">
+                    <a href="delreal" class="sorterComunidades">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/3.jpg" alt="" /></em>
                         <span>
                             <strong>Haciendas del Real</strong>
@@ -230,28 +238,28 @@
                     </a>
                 </li>
                 <li data-id="id-3" class="Chihuahua sendas">
-                    <a href="portfolio_item.html">
+                    <a href="cataluna" class="sorterCerradas">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/4.jpg" alt="" /></em>
                         <span>
-                            <strong>Catalunia</strong>
+                            <strong>Cataluña</strong>
                             <i>Anim pariatur cliche reprehenderit</i>
                         </span>
                     </a>
                 </li>
-                <li data-id="id-4" class="print">
-                    <a href="portfolio_item.html">
+                <li data-id="id-4" class="Chihuahua sendas cataluna">
+                    <a href="Asturias.html">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/5.jpg" alt="" /></em>
                         <span>
-                            <strong>Happy New Year</strong>
+                            <strong>Asturias</strong>
                             <i>Anim pariatur cliche reprehenderit</i>
                         </span>
                     </a>
                 </li>
-                <li data-id="id-5" class="web">
-                    <a href="portfolio_item.html">
+                <li data-id="id-5" class="Chihuahua sendas cataluna">
+                    <a href="Asturias.html">
                     	<em class="overflow-hidden"><img src="assets/plugins/portfolioSorting/img/6.jpg" alt="" /></em>
                         <span>
-                            <strong>Happy New Year</strong>
+                            <strong>Cantabria</strong>
                             <i>Anim pariatur cliche reprehenderit</i>
                         </span>
                     </a>
@@ -452,10 +460,9 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
-    });
-    function goLevel2(){
 
-    }
+    });
+
 </script>
 <!--[if lt IE 9]>
     <script src="assets/js/respond.js"></script>
