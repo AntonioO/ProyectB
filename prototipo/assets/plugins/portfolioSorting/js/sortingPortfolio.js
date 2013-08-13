@@ -1,23 +1,28 @@
 $(document).ready(initSortingPortfolio());
 
+var pclone;
+
 function initSortingPortfolio(){
-  sortPortfolio("sorterCiudades","portfolio");
-  sortPortfolio("sorterComunidades","portfolio");
-  sortPortfolio("sorterCerradas","portfolio");
+  pclone = $(".portfolio").clone();
+  sortPortfolio("sorterCiudades");
+  sortPortfolio("sorterComunidades");
+  sortPortfolio("sorterCerradas");
+
+  doSort($(".Chihuahua"),"sorterCiudades");
 }
 
-
-function sortPortfolio(sorterId , portfolioClass){
+function sortPortfolio(sorterId){
+ // pclone = $("."+portfolioClass).clone();
+  
   $("#"+sorterId+" a").on("click", function(e){
     e.preventDefault();
 
-    doSort($(this),sorterId , portfolioClass);
-
+    doSort($(this),sorterId);
+    
   }); // end click event listener
 }
 
-function doSort(_this,sorterId , portfolioClass){
-    var pclone = $("."+portfolioClass).clone();
+ function doSort(_this, sorterId){
     var sorttype="";
     
     // determine if another link is selected
@@ -25,62 +30,62 @@ function doSort(_this,sorterId , portfolioClass){
       $("#"+sorterId+" a").removeClass("selected");
       _this.addClass("selected");
     }
-    
+
     hideLowerLevels(sorterId);
-
+    
     // check filter sort type
-
     $(".sort a").filter(".selected").each(function(){
       sorttype += " "+ $(this).attr("class");
     });
 
     sorttype = sorttype.split(" selected").join("").trim();
-
+ 
     var filterselect = pclone.find("li[class='"+sorttype+"']");
-    
-    $("."+portfolioClass).quicksand(filterselect, 
+    // sort
+    $(".portfolio").quicksand(filterselect, 
     {
       adjustHeight: 'auto',
       duration: 550
-    }, function() { // callback function
+    }, function() { 
+      // callback function
       reattachEvents("sorterComunidades");
       reattachEvents("sorterCerradas");
     }
     );//end quicksand
-}
+ }
 
-function hideLowerLevels(sorterId){
-    //if sorterCiudades
-    if (sorterId=="sorterCiudades") {
-      unselect("sorterComunidades");
-      hideSorter("sorterComunidades");
-      unselect("sorterCerradas");
-      hideSorter("sorterCerradas");
-    }else if (sorterId=="sorterComunidades") {
-      unselect("sorterCerradas");
-      hideSorter("sorterCerradas");
-    };
-}
+ function reattachEvents(sorterId){
+   //event listener to hide/show sorters
+       $("."+sorterId).on("click", function(e){
+         e.preventDefault();
+         showSorter(sorterId);
+         var selected = $(this).attr('href');
+         doSort($("."+selected),sorterId,"portfolio");
+       });
+   //
+ }
 
-function reattachEvents(sorterId){
-  //event listener to hide/show sorters
-      $("."+sorterId).on("click", function(e){
-        e.preventDefault();
-        showSorter(sorterId);
-        var selected = $(this).attr('href');
-        doSort($("."+selected),sorterId,"portfolio");
-      });
-  //
-}
+  function showSorter(sorterId) {
+   $("#"+sorterId).removeClass("sortHidden").addClass("sortUnhidden");
+ }
+ 
+ function hideSorter(sorterId) {
+   $("#"+sorterId).removeClass("sortUnhidden").addClass("sortHidden");
+ }
+ 
+ function unselect(sorterId) {
+   $("#"+sorterId+" a").removeClass("selected");
+ }
 
-function showSorter(sorterId) {
-  $("#"+sorterId).removeClass("sortHidden").addClass("sortUnhidden");
-}
+ function hideLowerLevels(sorterId){
+     if (sorterId=="sorterCiudades") {
+       unselect("sorterComunidades");
+       hideSorter("sorterComunidades");
+       unselect("sorterCerradas");
+       hideSorter("sorterCerradas");
+     }else if (sorterId=="sorterComunidades") {
+       unselect("sorterCerradas");
+       hideSorter("sorterCerradas");
+     };
+ }
 
-function hideSorter(sorterId) {
-  $("#"+sorterId).removeClass("sortUnhidden").addClass("sortHidden");
-}
-
-function unselect(sorterId) {
-  $("#"+sorterId+" a").removeClass("selected");
-}
