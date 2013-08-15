@@ -157,6 +157,7 @@ blockquote:hover {
 }
 .tab-content { 
 	border-top:solid 2px #72c02c; 
+	background:#72c02c;
 }
 
 /*Accardion
@@ -268,6 +269,10 @@ blockquote:hover {
 .sort li a.selected { 
 	color: #72c02c; 
 	border-bottom: 1px solid #72c02c;
+}
+
+ul:customUnstyled {
+	height: 28px;
 }
 
 .view a.info:hover {

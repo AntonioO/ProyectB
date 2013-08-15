@@ -1,9 +1,13 @@
 $(document).ready(initSortingPortfolio());
 
 var pclone;
+var sorterComClone;
+var sorterCerClone;
 
 function initSortingPortfolio(){
   pclone = $(".portfolio").clone();
+  sorterComClone = $("div#sorterComunidades").children(":first").clone();
+  sorterCerClone = $("div#sorterCerradas").children(":first").clone();
   sortPortfolio("sorterCiudades");
   sortPortfolio("sorterComunidades");
   sortPortfolio("sorterCerradas");
@@ -16,7 +20,6 @@ function sortPortfolio(sorterId){
   
   $("#"+sorterId+" a").on("click", function(e){
     e.preventDefault();
-
     doSort($(this),sorterId);
     
   }); // end click event listener
@@ -48,19 +51,25 @@ function sortPortfolio(sorterId){
       duration: 550
     }, function() { 
       // callback function
-      reattachEvents("sorterComunidades");
-      reattachEvents("sorterCerradas");
+      reattachEvents("sorterComunidades", sorterComClone);
+      reattachEvents("sorterCerradas", sorterCerClone);
     }
     );//end quicksand
  }
 
- function reattachEvents(sorterId){
+ function reattachEvents(sorterId, sorterClone){
    //event listener to hide/show sorters
        $("."+sorterId).on("click", function(e){
          e.preventDefault();
-         showSorter(sorterId);
          var selected = $(this).attr('href');
-         doSort($("."+selected),sorterId,"portfolio");
+         var parentArray = $(this).parent().attr('class').split(" ");
+         var parent = parentArray[parentArray.length-1];
+         filterSorter(sorterId, parent, sorterClone);
+         $("a."+parent).addClass("selected");
+
+         doSort($("a."+selected),sorterId,"portfolio");
+         showSorter(sorterId);
+         $("ul.unstyled").css("style", "height: 28px;");
        });
    //
  }
@@ -89,3 +98,21 @@ function sortPortfolio(sorterId){
      };
  }
 
+function filterSorter(sorterId, filter, sorterClone){
+    var sorttype = filter.split(" selected").join("").trim();
+    var filterselect = sorterClone.find("li[class='"+sorttype+"']");
+    // sort
+    $("div#"+sorterId).children(":first").quicksand(filterselect, 
+    {
+      adjustHeight: '28px',
+      duration: 0
+    }, function() { 
+      // callback function  //reattach events to sorters
+      sortPortfolio("sorterCiudades");
+      sortPortfolio("sorterComunidades");
+      sortPortfolio("sorterCerradas");
+
+    });
+
+    //end quicksand
+}
