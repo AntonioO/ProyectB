@@ -61,7 +61,7 @@ website:   	http://www.themepunch.com
 	width:90% !important;
 	position:relative;
 	padding:0;
-	max-height:500px !important;
+	max-height:400px !important;
 	overflow:hidden;
 	margin-left:auto;
 		margin-right:auto;
@@ -69,7 +69,7 @@ website:   	http://www.themepunch.com
 
 .fullwidthbanner-container .fullwidthabnner	{
 	width:90% !important;
-	max-height:500px !important;
+	max-height:400px !important;
 	position:relative;
 }
 
