@@ -58,15 +58,17 @@ website:   	http://www.themepunch.com
    }
 
  .fullwidthbanner-container{
-	width:100% !important;
+	width:90% !important;
 	position:relative;
 	padding:0;
 	max-height:500px !important;
 	overflow:hidden;
+	margin-left:auto;
+		margin-right:auto;
 }
 
 .fullwidthbanner-container .fullwidthabnner	{
-	width:100% !important;
+	width:90% !important;
 	max-height:500px !important;
 	position:relative;
 }
