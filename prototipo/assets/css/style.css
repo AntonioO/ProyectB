@@ -483,6 +483,7 @@ blockquote:hover {
 /*Thumbnail*/
 .thumbnail-style { 
 	padding:5px; 
+	padding-left:-20px; 
 	border-radius:2px; 
 }
 .thumbnail-style:hover { 
@@ -506,7 +507,7 @@ blockquote:hover {
 	position:relative;
 }
 .thumbnail-style a.btn-more {
-	right:-10px;
+	right:0px;
 	bottom:10px;
 	color:#fff;
 	padding:1px 6px;
